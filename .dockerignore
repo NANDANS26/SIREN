@@ -1,0 +1,10 @@
+.git
+.kiro
+.hypothesis
+.pytest_cache
+__pycache__
+tests/
+*.pyc
+*.pyo
+uv.lock
+.env

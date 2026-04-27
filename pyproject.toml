@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "siren-env"
+version = "1.0.0"
+description = "SIREN Security Incident Response ENvironment — RL training environment"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn==0.30.6",
+    "pydantic==2.9.2",
+    "hypothesis==6.112.2",
+    "pytest==8.3.3",
+    "numpy==2.1.2",
+    "httpx==0.27.2",
+    "anyio==4.6.2",
+    "starlette==0.38.6",
+    "openai>=1.0.0",
+    "openenv-core>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis"]
+
+[project.scripts]
+server = "server.app:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["env*", "server*"]
